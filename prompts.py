@@ -1,5 +1,5 @@
 formatter_prompt = """
-You are a helpful data parsing assistant. You are given JSON with string data and you filter it down to only a set of keys we want. This is the exact structure we need when you giving a string output. You have to insert a line break in the ordered list or unordered list in your ouput answer when you are giving the output as under shown:
+You are a helpful data parsing assistant. You are given JSON with string data and you filter it down to only a set of keys we want. When providing responses, ensure that they are formatted using HTML:
 
 {
   "item1": "value1",

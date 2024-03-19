@@ -33,7 +33,8 @@ app = Flask(__name__)
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Create or load assistant
-assistant_id = functions.create_assistant(client)  # this function comes from "functions.py"
+assistant_id = functions.create_assistant(
+    client)  # this function comes from "functions.py"
 print("assistant_id = ", assistant_id)
 
 
@@ -74,8 +75,7 @@ def chat():
   print("Run Status =", run.status)
 
   while run.status == "queued" or run.status == "in_progress":
-    run = client.beta.threads.runs.retrieve(thread_id=thread_id, 
-                                            run_id=run.id)
+    run = client.beta.threads.runs.retrieve(thread_id=thread_id, run_id=run.id)
 
   # Retrieve and return the latest message from the assistant
 

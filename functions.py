@@ -58,11 +58,11 @@ def create_assistant(client):
       assistant_id = assistant_data['assistant_id']
       print("Loaded existing assistant ID.")
   else:
-    
-    # If no assistant.json is present, create a new assistant 
 
+    # If no assistant.json is present, create a new assistant
 
-    file = client.files.create(file=open("ExternalWordPressDeveloperGuide.txt", "rb"),
+    file = client.files.create(file=open("ExternalWordPressDeveloperGuide.txt",
+                                         "rb"),
                                purpose='assistants')
 
     assistant = client.beta.assistants.create(
